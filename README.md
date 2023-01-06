@@ -12,25 +12,20 @@ to demonstrate the scheme's effectiveness and efficiency.  By employing INT on C
 we can get around 7% (Waymo) and 15% (nuScenes) performance boost with only 2~4ms latency overhead,
 and currently SOTA on the Waymo 3D Detection leaderboard.
 
-<p align="center"> <img src='resources/INT-Framework.png' align="center" height="230px"> </p>
+<p align="center"> <img src='docs/INT-Framework.png' align="center" height="230px"> </p>
 
-[comment]: <> (![demo image]&#40;resources/INT-Framework.png&#41;)
+> **INT: Towards Infinite-frames 3D Detection with An Efficient Framework**,             
+> *[ver.ECCV2022](https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136690190.pdf)* | *[ver.Arxiv(more details)](https://arxiv.org/abs/2209.15215)*
 
-INT is accepted by ECCV2022. Paper and code are on the way.
 
-[comment]: <> (If you find this project useful, please cite:)
 
-[comment]: <> (    @article{Xu2022INT,)
+    @article{xu2022int,
+      title={INT: Towards Infinite-frames 3D Detection with An Efficient Framework},
+      author={Xu, Jianyun and Miao, Zhenwei and et al.},
+      journal={ECCV},
+      year={2022},
+    }
 
-[comment]: <> (      title={INT: Towards Infinite-frames 3D Detection with An Efficient Framework},)
-
-[comment]: <> (      author={Xu, Jianyun and Miao, Zhenwei and et al.},)
-
-[comment]: <> (      journal={ECCV},)
-
-[comment]: <> (      year={2022},)
-
-[comment]: <> (    })
 
 
 
@@ -39,7 +34,7 @@ INT is accepted by ECCV2022. Paper and code are on the way.
 - **Simple and Fast:** INT is an on-stream multi-frame system made up of Memory Bank and Dynamic Training Sequence Length that can theoretically 
 be trained and predicted using infinite frames while consuming similar computation and memory as a single-frame system.
 
-- **SOTA**: Our 100-frames INT is currently SOTA on Waymo 3D Detection [leaderboard](https://waymo.com/open/challenges/2020/3d-detection/).
+- **SOTA**: Our 100-frames INT is currently among SOTAs (w/o ensemble) on Waymo 3D Detection [leaderboard](https://waymo.com/open/challenges/2020/3d-detection/).
 
 - **Extensible**: INT can be employed on most detectors, even for other tasks, like segmentation.
 
@@ -69,32 +64,23 @@ All results are tested on a GeForce RTX 2070 SUPER with batch size 1.
 
 
 
-[comment]: <> (## Use INT)
+## Use INT
 
-[comment]: <> (### Installation)
+### Installation
 
-[comment]: <> (Please refer to [INSTALL]&#40;docs/INSTALL.md&#41; to set up libraries needed for distributed training and sparse convolution.)
+Please refer to [INSTALL](docs/INSTALL.md) to set up libraries needed for distributed training and sparse convolution.
 
-[comment]: <> (### Benchmark Evaluation and Training)
+### Benchmark Evaluation and Training
 
-[comment]: <> (Please refer to [GETTING_START]&#40;docs/GETTING_START.md&#41; to prepare the data. Then follow the instruction there to reproduce our detection and tracking results. All detection configurations are included in [configs]&#40;configs&#41;.)
+Please refer to [GETTING_START](docs/GETTING_START.md) to prepare the data. 
 
-
-[comment]: <> (### ToDo List)
-
-[comment]: <> (- [ ] Support visualization with Open3D)
-
-[comment]: <> (- [ ] Colab demo)
-
-[comment]: <> (- [ ] Docker)
-
+Use configs with "_small_" tag in [configs](configs) to reproduce our results. The "_big_" tag ones bring better results, and you can try it too. 
 
 
 ## License
 
 INT is release under MIT license (see [LICENSE](LICENSE)). It is developed based on [CenterPoint](https://github.com/tianweiy/CenterPoint). 
 Note that both nuScenes and Waymo datasets are under non-commercial licenses.
-
 
 
 
